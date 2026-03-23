@@ -57,7 +57,7 @@ MAX_HISTORY = 10  # 5 exchanges (5 user + 5 model)
 # ── Gemini client ─────────────────────────────────────────────────────────────
 MODEL = "gemini-1.5-flash"
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel(MODEL)
 
 # ── Prompts ───────────────────────────────────────────────────────────────────
 SYSTEM_INSTRUCTION = (
