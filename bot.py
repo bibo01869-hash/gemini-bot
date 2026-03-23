@@ -15,8 +15,8 @@ from keep_alive import keep_alive
 
 keep_alive()
 
-from google import genai
-from google.genai import types
+import google.generativeai as genai
+from google.generativeai import types
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -55,8 +55,8 @@ MAX_FILE_BYTES = 20 * 1024 * 1024  # 20 MB (Telegram Bot API limit)
 MAX_HISTORY = 10  # 5 exchanges (5 user + 5 model)
 
 # ── Gemini client ─────────────────────────────────────────────────────────────
-client = genai.Client(api_key=GEMINI_API_KEY)
-MODEL = "gemini-2.5-flash"
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # ── Prompts ───────────────────────────────────────────────────────────────────
 SYSTEM_INSTRUCTION = (
